@@ -121,7 +121,18 @@ class MainMenuState extends MusicBeatState
 		#if mobileC
 		addVirtualPad(UP_DOWN, A_B);
 		#end
-		
+				
+		var button = new FlxButton(-45, -105, "", ()-> {
+			FlxG.openURL('https://discord.gg/z94kXr7Q2H');
+		}).loadGraphic('assets/android/penis.png');
+		add(button);
+
+		bg = new FlxSprite(0, -20).loadGraphic(Paths.image('penis'));
+		bg.scrollFactor.set();
+		bg.setGraphicSize(Std.int(bg.width * 0.07));
+		bg.updateHitbox();
+		bg.antialiasing = true;
+		add(bg);
 		/*
 		if (dfjkShit){
 		    Controls.setKeyboardScheme(Duo, true);
